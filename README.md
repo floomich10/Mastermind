@@ -2,12 +2,12 @@
 
 Key points:
 
-**- The application should use a mastermindGame class, which has
+- The application should use a mastermindGame class, which has
 a constructor with parameters for the number of pegs in the code (1 to 10) and the number of colors for
 the pegs (1 to 9).
 - For example, if the code is 1 2 3 4 5 6 and the guess
 is 2 1 1 2 2 2, then the mastermindGame object should only report two correct colors (a single 1 and a
-single 2).**
+single 2).
 
 From the textbook:
 
@@ -28,5 +28,5 @@ single 2). Application output should look similar to:
 
 ![image](https://github.com/floomich10/Mastermind/assets/144454297/00662468-d01d-434d-8062-3a05bdd239c7)
 
-Link to mastermind game online: ![link](https://www.archimedes-lab.org/mastermind.html?authuser=0)
+Link to mastermind game online: https://www.archimedes-lab.org/mastermind.html?authuser=0
 
