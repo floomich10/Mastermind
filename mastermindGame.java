@@ -27,6 +27,15 @@ public class mastermindGame{
     this.pegColours = pegColours;
   }
 
+  public String toString() {
+
+    String masterString;
+
+    masterString = "Amount of pegs: " + this.pegNumber + " | Peg colours: " + this.pegColours;
+
+    return masterString;
+  }
+
 }
 
     
