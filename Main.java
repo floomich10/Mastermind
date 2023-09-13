@@ -6,6 +6,7 @@ class Main {
 
     Scanner input = new Scanner(System.in);
     mastermindGame mastermind = new mastermindGame(0, 0);
+    Guess guess = new Guess(0);
 
     
     System.out.println("Welcome to Mastermind!");
@@ -20,6 +21,13 @@ class Main {
     input.close();
 
     System.out.println(mastermind.toString());
+
+    // guesses = (pegNum * pegNum) + (pegVariation * pegVariation)
+    guess.setGuesses(((mastermind.getPegNumber() * mastermind.getPegNumber()) + (mastermind.getPegColours() * mastermind.getPegColours())));
+
+    System.out.println("Since you selected " + mastermind.getPegNumber() + " pegs, and a selection between " + mastermind.getPegColours() + " colours, you will be given " + guess.getGuesses() + " to guess the correct combination.");
+
+
     
 
 
