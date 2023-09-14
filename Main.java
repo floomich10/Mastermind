@@ -15,15 +15,15 @@ class Main {
     System.out.println("Enter the number of pegs (1-10): ");
     mastermind.setPegNumber(input.nextInt());
 
-    System.out.println("Enter the number of colours (1-9): ");
+    System.out.println("Enter the number of colours (2-9): ");
     mastermind.setPegColours(input.nextInt());
 
     input.close();
 
     System.out.println(mastermind.toString());
 
-    // guesses = (pegNum * pegNum) + (pegVariation * pegVariation)
-    guess.setGuesses(((mastermind.getPegNumber() * mastermind.getPegNumber()) + (mastermind.getPegColours() * mastermind.getPegColours())));
+    // guesses = (pegNum + pegVariation)
+    guess.setGuesses(mastermind.getPegNumber() + mastermind.getPegColours());
 
     System.out.println("Since you selected " + mastermind.getPegNumber() + " pegs, and a selection between " + mastermind.getPegColours() + " colours, you will be given " + guess.getGuesses() + " to guess the correct combination.");
 
