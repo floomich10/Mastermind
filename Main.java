@@ -23,28 +23,24 @@ class Main {
 
     if (mastermind.getPegNumber() > 10){
       mastermind.setPegNumber(10);
-      System.out.prinln("Out of Bounds: Pegs set to 10");
+      System.out.println("Out of Bounds: Pegs set to 10");
     }
     if (mastermind.getPegNumber() < 2){
       mastermind.setPegNumber(2);
-      System.out.prinln("Out of Bounds: Pegs set to 2");
+      System.out.println("Out of Bounds: Pegs set to 2");
     }
     
     System.out.println("Enter the number of colours (2-9): ");
     mastermind.setPegColours(input.nextInt());
 
-    if (mastermind.getPegColour() > 9){
-      mastermind.setPegColour(9);
-      System.out.prinln("Out of Bounds: colours set to 9");
+    if (mastermind.getPegColours() > 9){
+      mastermind.setPegColours(9);
+      System.out.println("Out of Bounds: colours set to 9");
     }
-    if (mastermind.getPegColour() < 2){
-      mastermind.setPegColour(2);
-      System.out.prinln("Out of Bounds: Colours set to 2");
+    if (mastermind.getPegColours() < 2){
+      mastermind.setPegColours(2);
+      System.out.println("Out of Bounds: Colours set to 2");
     }
-
-
-    
-    input.close();
 
     System.out.println(mastermind.toString());
 
@@ -69,13 +65,13 @@ class Main {
       System.out.println(i.getColour());
     }
 
-    for (int g = guess.getGuesses(); g > 0; g--) {
+    for (int g = 0; g < guess.getGuesses(); g++) {
 
       System.out.println("Guess " + (g + 1));
 
-      for (int p = 0; p < mastermind.getPegs(); p++) {
+      for (int p = 0; p < mastermind.getPegNumber(); p++) {
 
-        System.out.print("Colour for peg " + p + ": ");
+        System.out.print("Colour for peg " + (p + 1) + ": ");
         int inputedGuess = input.nextInt();
 
         Peg peggy = new Peg(inputedGuess);
@@ -90,11 +86,6 @@ class Main {
       
       System.out.println(z.getColour());
     }
-    
-
-
-
-    System.out.println();
 
 
 
