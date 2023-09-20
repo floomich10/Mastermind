@@ -9,25 +9,41 @@ class Main {
     Scanner input = new Scanner(System.in);
     mastermindGame mastermind = new mastermindGame(0, 0);
     Guess guess = new Guess(0);
-  
-    // ArrayList<String> pegs = new ArrayList<String>();
-  
-   // pegs.add();
-    // pegs.add();
     
    
     ArrayList<Peg> answer = new ArrayList<Peg>();
+    ArrayList<Peg> userGuess = new ArrayList<Peg>();
 
     
     System.out.println("Welcome to Mastermind!");
 
 
-    System.out.println("Enter the number of pegs (1-10): ");
+    System.out.println("Enter the number of pegs (2-10): ");
     mastermind.setPegNumber(input.nextInt());
 
+    if (mastermind.getPegNumber() > 10){
+      mastermind.setPegNumber(10);
+      System.out.prinln("Out of Bounds: Pegs set to 10");
+    }
+    if (mastermind.getPegNumber() < 2){
+      mastermind.setPegNumber(2);
+      System.out.prinln("Out of Bounds: Pegs set to 2");
+    }
+    
     System.out.println("Enter the number of colours (2-9): ");
     mastermind.setPegColours(input.nextInt());
 
+    if (mastermind.getPegColour() > 9){
+      mastermind.setPegColour(9);
+      System.out.prinln("Out of Bounds: colours set to 9");
+    }
+    if (mastermind.getPegColour() < 2){
+      mastermind.setPegColour(2);
+      System.out.prinln("Out of Bounds: Colours set to 2");
+    }
+
+
+    
     input.close();
 
     System.out.println(mastermind.toString());
@@ -47,16 +63,38 @@ class Main {
       answer.add(peg);
     }
 
-
+    // print answer (remove later)
     for (Peg i : answer) {
       
       System.out.println(i.getColour());
+    }
+
+    for (int g = guess.getGuesses(); g > 0; g--) {
+
+      System.out.println("Guess " + (g + 1));
+
+      for (int p = 0; p < mastermind.getPegs(); p++) {
+
+        System.out.print("Colour for peg " + p + ": ");
+        int inputedGuess = input.nextInt();
+
+        Peg peggy = new Peg(inputedGuess);
+        userGuess.add(peggy);
+
+      }
+
+    }
+
+    // print answer (remove later)
+    for (Peg z : userGuess) {
+      
+      System.out.println(z.getColour());
     }
     
 
 
 
-      
+    System.out.println();
 
 
 
