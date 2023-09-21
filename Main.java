@@ -17,7 +17,7 @@ class Main {
 
     int correctPegs = 0;
     int correctColours = 0;
-
+    boolean won = false;
     
     System.out.println("Welcome to Mastermind!");
 
@@ -91,6 +91,7 @@ class Main {
         if (answerPosition.getColour() == guessPosition.getColour()) {
 
           correctPegs++;
+
         }
 
         for (int a = 0; a < answer.size(); a++) {
@@ -105,6 +106,15 @@ class Main {
       userGuess.clear();
       System.out.println(correctPegs);
       System.out.println(correctColours);
+
+      if (correctPegs == answer.size()){
+
+      System.out.println("Congratulations! You've won!");
+      guess.setGuesses(0);
+      won = true;
+
+      }//are ya winning son?
+      
       correctPegs = 0;
       correctColours = 0;
 
@@ -119,8 +129,23 @@ class Main {
       System.out.println(z.getColour());
     }
 
+/** While (true);  {
 
+    
+ System.out.println(" You Failed Would You Like To Retry? Yes/No ");
 
+    String retry = input.next();
+
+      if(retry.equals("yes")); 
+    
+  System.out.println("Good Luck");
+
+  else if(retry.equals("no")); 
+
+  break;
+    +
+    } */
+      
 
 
   }// end main
