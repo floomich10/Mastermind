@@ -93,15 +93,18 @@ class Main {
           correctPegs++;
         }
 
-        if (answer.contains(guessPosition.getColour())) {
+        for (int a = 0; a < answer.size(); a++) {
 
-          correctColours++;
+          if (answer.get(a).getColour() == guessPosition.getColour()) {
+
+            correctColours++;
+          }
         }
       }
       
       userGuess.clear();
       System.out.println(correctPegs);
-      System.out.println(correctPegs);
+      System.out.println(correctColours);
       correctPegs = 0;
       correctColours = 0;
 
@@ -116,7 +119,6 @@ class Main {
       System.out.println(z.getColour());
     }
 
-  if 
 
 
 
