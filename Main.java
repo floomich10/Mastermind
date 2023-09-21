@@ -14,6 +14,7 @@ class Main {
    
     ArrayList<Peg> answer = new ArrayList<Peg>();
     ArrayList<Peg> userGuess = new ArrayList<Peg>();
+    ArrayList<Integer> alreadyGuessed = new ArrayList<Integer>();
 
     int correctPegs = 0;
     int correctColours = 0;
@@ -22,7 +23,7 @@ class Main {
     System.out.println("Welcome to Mastermind!");
 
 
-    System.out.println("Enter the number of pegs (2-10): ");
+    System.out.print("Enter the number of pegs (2-10): ");
     mastermind.setPegNumber(input.nextInt());
 
     if (mastermind.getPegNumber() > 10){
@@ -34,7 +35,7 @@ class Main {
       System.out.println("Out of Bounds: Pegs set to 2");
     }
     
-    System.out.println("Enter the number of colours (2-9): ");
+    System.out.print("Enter the number of colours (2-9): ");
     mastermind.setPegColours(input.nextInt());
 
     if (mastermind.getPegColours() > 9){
@@ -96,14 +97,19 @@ class Main {
 
         for (int a = 0; a < answer.size(); a++) {
 
-          if (answer.get(a).getColour() == guessPosition.getColour() && !(correctColours > a)) {
+          if (answer.get(a).getColour() == guessPosition.getColour()) {
 
-            correctColours++;
+            if (!(alreadyGuessed.contains(guessPosition.getColour()))) {
+
+              correctColours++;
+              alreadyGuessed.add(guessPosition.getColour());
+            }
           }
         }
       }
       
       userGuess.clear();
+      alreadyGuessed.clear();
       System.out.println(correctPegs);
       System.out.println(correctColours);
 
@@ -128,23 +134,6 @@ class Main {
       
       System.out.println(z.getColour());
     }
-
-/** While (true);  {
-
-    
- System.out.println(" You Failed Would You Like To Retry? Yes/No ");
-
-    String retry = input.next();
-
-      if(retry.equals("yes")); 
-    
-  System.out.println("Good Luck");
-
-  else if(retry.equals("no")); 
-
-  break;
-    +
-    } */
       
 
 
