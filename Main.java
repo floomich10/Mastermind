@@ -96,7 +96,7 @@ class Main {
 
         for (int a = 0; a < answer.size(); a++) {
 
-          if (answer.get(a).getColour() == guessPosition.getColour()) {
+          if (answer.get(a).getColour() == guessPosition.getColour() && !(correctColours > a)) {
 
             correctColours++;
           }
