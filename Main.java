@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import java.util.Random;
 import java.util.ArrayList;
+import java.util.Objects;
 
 class Main {
 
@@ -13,6 +14,9 @@ class Main {
    
     ArrayList<Peg> answer = new ArrayList<Peg>();
     ArrayList<Peg> userGuess = new ArrayList<Peg>();
+
+    int correctPegs = 0;
+    int correctColours = 0;
 
     
     System.out.println("Welcome to Mastermind!");
@@ -47,7 +51,7 @@ class Main {
     // guesses = (pegNum + pegVariation)
     guess.setGuesses(mastermind.getPegNumber() + mastermind.getPegColours());
 
-    System.out.println("Since you selected " + mastermind.getPegNumber() + " pegs, and a selection between " + mastermind.getPegColours() + " colours, you will be given " + guess.getGuesses() + " to guess the correct combination.");
+    System.out.println("Since you selected " + mastermind.getPegNumber() + " pegs, and a selection between " + mastermind.getPegColours() + " colours, you will be given " + guess.getGuesses() + " chances to guess the correct combination.");
 
 
   // create ANSWER array
@@ -79,17 +83,44 @@ class Main {
 
       }
 
+      for (int z = 0; z < answer.size(); z++) {
+
+        Peg answerPosition = answer.get(z);
+        Peg guessPosition = userGuess.get(z);
+
+        if (answerPosition.getColour() == guessPosition.getColour()) {
+
+          correctPegs++;
+        }
+
+        if (answer.contains(guessPosition.getColour())) {
+
+          correctColours++;
+        }
+      }
+      
+      userGuess.clear();
+      System.out.println(correctPegs);
+      System.out.println(correctPegs);
+      correctPegs = 0;
+      correctColours = 0;
+
+
+      
+
     }
 
-    // print answer (remove later)
+    // print guess (remove later)
     for (Peg z : userGuess) {
       
       System.out.println(z.getColour());
     }
 
+  if 
 
 
 
-  }
+
+  }// end main
 
 }
