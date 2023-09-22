@@ -72,7 +72,8 @@ class Main {
 
     for (int g = 0; g < guess.getGuesses(); g++) {
 
-      System.out.println("Guess " + (g + 1));
+      System.out.println("---------------------");
+      System.out.println("Guess " + (g + 1) +":");
 
       for (int p = 0; p < mastermind.getPegNumber(); p++) {
 
@@ -110,8 +111,7 @@ class Main {
       
       userGuess.clear();
       alreadyGuessed.clear();
-      System.out.println(correctPegs);
-      System.out.println(correctColours);
+      System.out.println("You have " + correctPegs + " peg(s) correct and " + correctColours + " colour(s) correct.");
 
       if (correctPegs == answer.size()){
 
@@ -134,6 +134,13 @@ class Main {
       
       System.out.println(z.getColour());
     }
+
+    // TODO:
+    // create option to run program again after it finishes
+    // remove things marked for remove later (system prints)
+    // add ending sysout which, if win != true, will say you lost. then print out correct answer (copy the already existing loop on lines 68-71 and replace println with print - make sure to space numbers)
+    // dont worry about uploading to github; i can do that when its done to avoid merge conflicts
+    // then done and tell mr. mcdaniel
       
 
 
